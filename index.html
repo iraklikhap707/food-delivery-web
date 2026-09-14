@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-container">
+        <div class="icons">
+          <a href="#"><img src="images/Vector.png" /></a>
+          <a href="#"><img src="images/Heart Icon.png" /></a>
+          <a href="#"><img src="images/Vector (1).png" /></a>
+          <a href="#"><img src="images/Vector (2).png" /></a>
+          <a href="#"><img src="images/book Icon.png" /></a>
+        </div>
+      </div>
+      <div class="main-container">
+        <div id="search-input">
+          <input
+            id="input-1"
+            type="search"
+            placeholder="What would you like to eat?"
+          />
+        </div>
+        <div class="advertisement-images">
+          <img src="images/1.avif" id="add-img" />
+          <div class="btn-controls">
+            <span class="btn active"></span>
+            <span class="btn"></span>
+            <span class="btn"></span>
+          </div>
+        </div>
+        <div class="product-filter">
+          <button class="filter active" id="btnAll">Show all</button>
+          <button class="filter" id="btnVegetarian">Vegetarian</button>
+          <button class="filter" id="btnNuts">Nuts</button>
+        </div>
+
+        <div id="products">
+          <button>aa</button>
+        </div>
+      </div>
+      <div class="cart-container">
+        <div class="cart-stat">
+          <h3>My Order</h3>
+          <p id="address">Delivery address</p>
+          <p><span id="deliveryTime">30-40 min</span></p>
+        </div>
+        <div id="cart-items"></div>
+        <div class="total-checkout">
+          <div class="delivery-fee">
+            <p>Sub Total <span id="subtotal">0</span> $</p>
+            <p>Delivery Fee <span id="delivery">3</span> $</p>
+          </div>
+          <div class="total-fee">
+            <p>
+              <strong>Total <span id="total">0</span> $</strong>
+            </p>
+          </div>
+          <div class="order-button">
+            <button class="btn-order">Check Out</button>
+          </div>
+        </div>
+      </div>
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>

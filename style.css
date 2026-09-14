@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Comic Relief", system-ui;
+}
+.container {
+  /* max-width: 1900px; */
+  width: 100%;
+  /* height: 970px; */
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+}
+.icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: column;
+  margin: 30px;
+  gap: 70px;
+}
+.left-container {
+  max-width: 95px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: whitesmoke;
+}
+.main-container {
+  width: 75%;
+  height: 800px;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#input-1 {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  font-size: 20px;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff;
+  color: #333;
+}
+::placeholder {
+  color: black;
+  font-size: 20px;
+}
+.search-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.advertisement-images img {
+  width: 100%;
+  display: block;
+  height: 370px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+.advertisement-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-basis: 47%;
+  position: relative;
+}
+.btn {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  cursor: pointer;
+}
+.btn.active {
+  background: black;
+}
+.btn-controls {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 40px;
+}
+.food-card {
+  background-color: rgba(245, 245, 245, 0.862);
+  border-radius: 8px;
+  width: 350px;
+  min-height: 210px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 20px;
+  border-radius: 20px;
+}
+.food-card h3{
+    padding: 0px 5px;
+}
+.food-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 15px;
+}
+.product-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+  
+}
+.filter {
+  padding: 10px;
+  color: white;
+  border: solid #f86433;
+  padding: 12px;
+  background: #f86433;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+.heart-icon {
+  border-radius: 10px;
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+}
+.food-card p {
+  margin-bottom: 10px;
+}
+.cart-container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  font-size: 30px;
+}
+.delivery-fee { 
+  margin-left: 40px;
+  font-size: 24px;
+  color: #797575;
+}
+.total-fee {
+  margin-left: 40px;
+  font-size: 20px;
+  color: #797575;
+}
+.cart-container {
+  background-color: rgba(245, 245, 245, 0.862);
+  width: 350px;
+}
+.order-button {
+  margin-left: 40px;
+  font-size: 30px;
+}
+.cart-stat {
+  margin-top: 50px;
+  margin-left: 40px;
+  font-size: 30px;
+}
+.btn-order {
+  width: 280px;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #ff5c28;
+  border: none;
+  color: white;
+}
+#cart-items {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 320px;
+  overflow-y: auto;
+  font-size: 16px;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 8px;
+}
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.cart-item-info {
+  flex: 1;
+}
+.cart-item-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+.cart-item-info p {
+  font-size: 13px;
+  color: #797575;
+}
+.cart-item-qty {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff5c28;
+}
+.total-checkout{
+    position: absolute;
+    top: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+    
