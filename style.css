@@ -16,14 +16,13 @@ body {
   font-family: "Comic Relief", system-ui;
 }
 .container {
-  /* max-width: 1900px; */
   width: 100%;
-  /* height: 970px; */
   background-color: white;
   height: 100vh;
   display: flex;
   max-width: 100%;
   justify-content: space-between;
+  position: relative;
 }
 .icons {
   display: flex;
@@ -52,7 +51,6 @@ body {
   width: 100%;
   height: 50px;
   display: flex;
-  font-size: 20px;
   padding: 10px 16px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -106,7 +104,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  max-height: 600px;
+  max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
   justify-content: center;
@@ -116,16 +114,15 @@ body {
 }
 .food-card {
   background-color: rgba(245, 245, 245, 0.862);
-  border-radius: 8px;
+  border-radius: 20px;
   width: 350px;
   min-height: 210px;
   text-align: center;
   position: relative;
   padding-bottom: 20px;
-  border-radius: 20px;
 }
-.food-card h3{
-    padding: 0px 5px;
+.food-card h3 {
+  padding: 0px 5px;
 }
 .food-card img {
   width: 100%;
@@ -139,10 +136,8 @@ body {
   align-items: center;
   margin-top: 30px;
   gap: 20px;
-  
 }
 .filter {
-  padding: 10px;
   color: white;
   border: solid #f86433;
   padding: 12px;
@@ -151,7 +146,6 @@ body {
   border-radius: 30px;
   font-size: 20px;
 }
-
 .heart-icon {
   border-radius: 10px;
   padding: 5px;
@@ -162,17 +156,38 @@ body {
   border: none;
   font-size: 20px;
 }
+.remove-icon{
+  border-radius: 10px;
+  padding: 2px;
+  position: relative;
+  bottom: 20px;
+  left: 116.4px;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  background: none;
+ 
+}
 .food-card p {
   margin-bottom: 10px;
 }
+
+/* ==========================================
+   კალათის კონტეინერი — დესკტოპზე ჩვეულებრივი
+   სვეტია, მობილურზე/ტაბლეტზე გადაიქცევა
+   fixed sidebar-ად (იხ. media query ქვემოთ)
+   ========================================== */
 .cart-container {
   display: flex;
   justify-content: start;
   align-items: start;
   flex-direction: column;
   font-size: 30px;
+  background-color: rgba(245, 245, 245, 0.862);
+  width: 260px;
+  position: relative;
 }
-.delivery-fee { 
+.delivery-fee {
   margin-left: 40px;
   font-size: 24px;
   color: #797575;
@@ -181,10 +196,6 @@ body {
   margin-left: 40px;
   font-size: 20px;
   color: #797575;
-}
-.cart-container {
-  background-color: rgba(245, 245, 245, 0.862);
-  width: 350px;
 }
 .order-button {
   margin-left: 40px;
@@ -196,7 +207,7 @@ body {
   font-size: 30px;
 }
 .btn-order {
-  width: 280px;
+  max-width: 240px;
   border-radius: 10px;
   padding: 15px;
   background-color: #ff5c28;
@@ -210,7 +221,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-height: 320px;
+  max-height: 600px;
   overflow-y: auto;
   font-size: 16px;
 }
@@ -244,11 +255,165 @@ body {
   font-weight: 600;
   color: #ff5c28;
 }
-.total-checkout{
-    position: absolute;
-    top: 80%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.total-checkout {
+  position: absolute;
+  top: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-    
+
+/* ==========================================
+   ჰამბურგერის ღილაკი — default-ში დამალულია,
+   მხოლოდ media query-ში ჩნდება
+   ========================================== */
+.menu-button {
+  visibility: hidden;
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #ff5c28;
+  border: none;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* კალათის დახურვის ღილაკი (X) — მხოლოდ sidebar რეჟიმში ჩანს */
+.cart-close {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+/* ბნელი overlay — მხოლოდ sidebar ღია დროს ჩანს */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 998;
+}
+.overlay.active {
+  display: block;
+}
+
+span {
+  margin: 3px;
+}
+
+@media only screen and (max-width: 1350px) {
+  .delivery-fee { font-size: 14px; }
+  .btn-order { width: 100%; margin-right: 40px; padding: 8px; }
+  .total-checkout { top: 70%; margin-top: 50px; }
+  .product-filter { padding: 5px; }
+  .left-container { display: none; }
+  .menu-button{display: none;}
+  #cart-items{height: 300px;}
+  .remove-icon{
+  border-radius: 10px;
+  position: relative;
+  bottom: 20px;
+  left: 157px;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  background: none;
+ 
+}
+}
+
+@media only screen and (max-width: 1050px) {
+  .delivery-fee { font-size: 14px; }
+  .remove-icon{
+  border-radius: 10px;
+  position: relative;
+  bottom: 20px;
+  left: 157px;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  background: none;
+ 
+}
+  .btn-order { width: 100%; margin-right: 40px; padding: 8px; }
+  .product-filter { padding: 5px; }
+  .left-container { display: none; }
+
+  /* ჰამბურგერი ჩნდება */
+  .menu-button {
+    display: flex;
+    visibility: visible;
+  }
+
+  /* კალათა ხდება fixed sidebar, ეკრანს გარეთ, sliding ანიმაციით */
+  .cart-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    max-width: 85%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+    padding-bottom: 40px;
+  }
+
+  .cart-container.active {
+    transform: translateX(0);
+  }
+
+  .cart-close {
+    display: block;
+  }
+
+  
+  .total-checkout {
+    position: static;
+    margin-top: 30px;
+    margin-left: 0;
+    padding-left: 40px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .main-container { flex-direction: column; }
+  .remove-icon{
+  border-radius: 10px;
+  position: relative;
+  bottom: 20px;
+  left: 157px;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  background: none;
+ 
+}
+  .delivery-fee { font-size: 14px; }
+  .btn-order { width: 100%; margin-right: 40px; padding: 8px; }
+  .product-filter { padding: 5px; }
+  .left-container { display: none; }
+  #products { min-height: 400px; }
+
+  .cart-container {
+    width: 85%;
+  }
+}

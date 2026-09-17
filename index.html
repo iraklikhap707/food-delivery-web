@@ -17,6 +17,7 @@
           <a href="#"><img src="images/book Icon.png" /></a>
         </div>
       </div>
+
       <div class="main-container">
         <div id="search-input">
           <input
@@ -34,38 +35,68 @@
           </div>
         </div>
         <div class="product-filter">
-          <button class="filter active" id="btnAll">Show all</button>
+          <button class="filter active" id="btnAll">
+            show<span>all</span>
+          </button>
           <button class="filter" id="btnVegetarian">Vegetarian</button>
           <button class="filter" id="btnNuts">Nuts</button>
         </div>
 
         <div id="products">
-          <button>aa</button>
+          <button></button>
         </div>
       </div>
-      <div class="cart-container">
+
+      <!--
+        ჰამბურგერის ღილაკი — ჩანს მხოლოდ 1050px-ზე დაბლა (media query-ით).
+        დესკტოპზე CSS-ით დამალულია.
+      -->
+      <button class="menu-button" id="menuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+          <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+        </svg>
+      </button>
+
+      <!--
+        ბნელი ფონი, კალათის უკან — მხოლოდ მობილურზე ჩნდება,
+        კალათის დახურვის დროსაც ეხმარება (გარეთ დაჭერით)
+      -->
+      <div class="overlay" id="overlay"></div>
+
+      <!--
+        ერთადერთი კალათის კონტეინერი — დესკტოპზე ჩვეულებრივ ჩანს,
+        მობილურზე/ტაბლეტზე ხდება sidebar, რომელიც ჰამბურგერით იხსნება
+      -->
+      <div class="cart-container" id="cartContainer">
+
+        <button class="cart-close" id="closeBtn">✕</button>
+
         <div class="cart-stat">
           <h3>My Order</h3>
           <p id="address">Delivery address</p>
           <p><span id="deliveryTime">30-40 min</span></p>
         </div>
+
         <div id="cart-items"></div>
+
         <div class="total-checkout">
           <div class="delivery-fee">
-            <p>Sub Total <span id="subtotal">0</span> $</p>
-            <p>Delivery Fee <span id="delivery">3</span> $</p>
+            <p>Sub Total <span id="subtotal">0</span> ₾</p>
+            <p>Delivery Fee <span id="delivery">3</span>₾</p>
           </div>
           <div class="total-fee">
             <p>
-              <strong>Total <span id="total">0</span> $</strong>
+              <strong>Total <span id="total">0</span> ₾</strong>
             </p>
           </div>
           <div class="order-button">
             <button class="btn-order">Check Out</button>
           </div>
         </div>
+
       </div>
-    
+
+    </div>
 
     <script src="script.js"></script>
   </body>
