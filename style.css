@@ -161,10 +161,10 @@ body {
   padding: 2px;
   position: relative;
   bottom: 20px;
-  left: 116.4px;
+  left: 117px;
   cursor: pointer;
   border: none;
-  font-size: 20px;
+  font-size: 17px;
   background: none;
  
 }
@@ -330,13 +330,14 @@ span {
   border-radius: 10px;
   position: relative;
   bottom: 20px;
-  left: 157px;
+  left: 115px;
   cursor: pointer;
   border: none;
-  font-size: 20px;
+  font-size: 15px;
   background: none;
  
 }
+
 }
 
 @media only screen and (max-width: 1050px) {
@@ -348,7 +349,7 @@ span {
   left: 157px;
   cursor: pointer;
   border: none;
-  font-size: 20px;
+   font-size: 17px;
   background: none;
  
 }
@@ -400,13 +401,15 @@ span {
   border-radius: 10px;
   position: relative;
   bottom: 20px;
-  left: 157px;
+  left: 209px;
+  
   cursor: pointer;
   border: none;
-  font-size: 20px;
+   font-size: 15px;
   background: none;
  
 }
+  .cart-item-qty{ margin-top: 20px;}
   .delivery-fee { font-size: 14px; }
   .btn-order { width: 100%; margin-right: 40px; padding: 8px; }
   .product-filter { padding: 5px; }
