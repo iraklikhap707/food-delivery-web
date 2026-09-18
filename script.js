@@ -130,6 +130,7 @@ function renderProducts(products) {
         cart.push({ ...product, quantity: 1 });
       }
       renderCart();
+      alert("Your product has been added to cart")
     });
   });
 }
@@ -160,10 +161,14 @@ function renderCart() {
         return item.id !== productId;
       });
       renderCart();
+
     });
   });
 
   updateTotals();
+
+
+
 }
 
 function updateTotals() {
